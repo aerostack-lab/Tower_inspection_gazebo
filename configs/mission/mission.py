@@ -7,7 +7,7 @@ import math
 import time
 
 
-points = [[1, 0, 1.6], [7.5, 0, 1.6], [2, 0, 1.6],[2, 0, 6], [7, 0, 6], [3, 0, 6], [3, 0, 10.6], [7, 0, 10.6], [3, 0, 10.6], [3, 0, 15], [7, 0, 15], [0, 0, 15]]
+points = [[1, 0, 1.6], [7.5, 0, 1.6], [2, 0, 1.6],[3, 0, 6], [7, 0, 6], [3, 0, 6], [2, 0, 10.6], [7, 0, 10.6], [3, 0, 10.6], [2, 0, 15], [7, 0, 15], [0, 0, 15]]
   
 
 
@@ -26,16 +26,12 @@ def mission():
 		exit_code = 3
       		while (retry == 0 or exit_code == 3):	   		
 	   		if (j == 0 or j ==3 or j ==6 or j == 9):
-				
-				if (j != 0):
-	   				exit_code = mxc.executeTask('FOLLOW_PATH', path=[points[j-1], points[j]])[1]
-				else:
-					exit_code = mxc.executeTask('FOLLOW_PATH', path=[points[j]])[1]
+				print("Follow path simple")
+				exit_code = mxc.executeTask('FOLLOW_PATH', path=[points[j]])[1]
 	   			mxc.startTask('CLEAR_OCCUPANCY_GRID')
 	   			retry = 1
+				time.sleep(5)
 			else:
-				if (j == 4):
-					time.sleep(2)
       				print("Generating path")
       				print (str(point))
 				traject = mxc.executeTask('GENERATE_PATH', destination=point)
