@@ -1,6 +1,6 @@
 # Application: tower_inspection_gazebo
 
-This application illustrates how two drones inspects a each floor of a tower. During the mission execution, it is possible to pause and continue the mission execution. While the mission is executing, the drones explores and saves the map of every floor that has been explored.
+This application illustrates how a drone inspects a each floor of a tower. During the mission execution, it is possible to pause and continue the mission execution. While the mission is executing, the drones explores and saves the map of every floor that has been explored.
 
 In order to execute the mission, perform the following steps:
 
